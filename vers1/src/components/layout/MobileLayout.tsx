@@ -7,7 +7,7 @@ interface MobileLayoutProps {
 
 export const MobileLayout: React.FC<MobileLayoutProps> = ({ children, bottomNav }) => {
   return (
-    <div className="w-full h-screen bg-white md:min-h-screen md:h-auto md:bg-gray-100 md:p-4 md:flex md:items-center md:justify-center">
+    <div className="w-full h-[100dvh] bg-white md:min-h-screen md:h-auto md:bg-gray-100 md:p-4 md:flex md:items-center md:justify-center">
       <div className="relative w-full h-full bg-white flex flex-col md:w-[41vh] md:h-[85vh] md:max-h-[850px] md:min-h-[600px] md:shadow-2xl md:rounded-[40px] md:overflow-hidden md:border-8 md:border-gray-900 md:ring-1 md:ring-gray-900/50">
         {/* Dynamic Island / Notch - Desktop Only */}
         <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50"></div>
@@ -25,7 +25,7 @@ export const MobileLayout: React.FC<MobileLayoutProps> = ({ children, bottomNav 
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden relative bg-white scroll-smooth pb-24 no-scrollbar">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden relative bg-white scroll-smooth pb-32 no-scrollbar">
           {children}
         </div>
 

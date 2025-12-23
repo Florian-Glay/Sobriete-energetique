@@ -17,7 +17,10 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentView, onNavigate })
   ] as const;
 
   return (
-    <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-100 px-6 py-4 pb-6 flex justify-between items-center z-40">
+    <div 
+      className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-100 px-6 py-4 flex justify-between items-center z-40"
+      style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom))' }}
+    >
       {navItems.map((item) => {
         const isActive = currentView === item.id;
         return (

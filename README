@@ -8,3 +8,5 @@ git remote add origin https://github.com/Florian-Glay/Sobriete-energetique.git
 git push -u origin main
 
 npm install --save-dev gh-pages
+
+TO DO EVERY NEW VERSION : npm run deploy

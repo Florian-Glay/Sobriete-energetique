@@ -13,8 +13,8 @@ export const DashboardView: React.FC = () => {
   return (
     <div className="flex flex-col gap-6 px-6 pt-6 pb-24 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header>
-        <h1 className="text-2xl font-bold text-gray-900">Bonjour, Alex 👋</h1>
-        <p className="text-gray-500 text-sm">Votre bilan énergétique du jour</p>
+        <h1 className="text-2xl font-bold text-gray-900">Bonjour,</h1>
+        <p className="text-gray-500 text-sm">Voici votre bilan énergétique du jour</p>
       </header>
 
       {/* Score Card */}

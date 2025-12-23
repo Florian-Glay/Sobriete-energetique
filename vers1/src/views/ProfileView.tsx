@@ -7,8 +7,10 @@ export const ProfileView: React.FC = () => {
     { icon: Shield, label: 'Confidentialité', value: '' },
     { icon: Settings, label: 'Préférences', value: '' },
   ];
-
+  let chName = "Flo"
+  let chEmail = "flo.g@gmail.com"
   return (
+    
     <div className="flex flex-col gap-6 px-6 pt-6 pb-24 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header>
         <h1 className="text-2xl font-bold text-gray-900">Profil</h1>
@@ -21,8 +23,8 @@ export const ProfileView: React.FC = () => {
             <User size={32} />
         </div>
         <div>
-            <h2 className="text-lg font-bold text-gray-900">Alex Martin</h2>
-            <p className="text-xs text-gray-500">alex.martin@example.com</p>
+            <h2 className="text-lg font-bold text-gray-900">{chName}</h2>
+            <p className="text-xs text-gray-500">{chEmail}</p>
             <span className="inline-block mt-2 px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded-full">
                 Membre Premium
             </span>
@@ -56,7 +58,7 @@ export const ProfileView: React.FC = () => {
        </button>
        
        <p className="text-center text-[10px] text-gray-400 mt-4">
-            Version 1.0.2 • Build 20231025
+            Version 1.0.2 • Build 20251224
        </p>
     </div>
   );

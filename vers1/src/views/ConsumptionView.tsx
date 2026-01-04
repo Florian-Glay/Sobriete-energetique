@@ -29,7 +29,7 @@ export const ConsumptionView: React.FC = () => {
   const tabs = [
     { id: 'elec', label: 'Électricité' },
     { id: 'water', label: 'Eau' },
-    { id: 'digital', label: 'Numérique' },
+    { id: 'digital', label: 'Gaz' },
   ] as const;
 
   return (
@@ -57,7 +57,7 @@ export const ConsumptionView: React.FC = () => {
       {/* Main Chart */}
       <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 h-64">
         <h3 className="text-sm font-semibold text-gray-900 mb-4">
-            {activeTab === 'elec' ? 'Cette semaine (kWh)' : activeTab === 'water' ? 'Cette semaine (L)' : 'Temps d\'écran (h)'}
+            {activeTab === 'elec' ? 'Cette semaine (kWh)' : activeTab === 'water' ? 'Cette semaine (L)' : 'Temps de chauffage (h)'}
         </h3>
         <ResponsiveContainer width="100%" height="100%">
             {activeTab === 'elec' ? (

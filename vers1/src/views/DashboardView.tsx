@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Zap, Droplets, Monitor } from 'lucide-react';
+import { Leaf, Zap, Droplets, Flame  } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 export const DashboardView: React.FC = () => {
@@ -78,11 +78,11 @@ export const DashboardView: React.FC = () => {
         <div className="bg-purple-50 p-4 rounded-2xl flex flex-col gap-2 col-span-2">
              <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
-                    <Monitor size={16} />
+                    <Flame size={16} />
                 </div>
                 <div>
-                    <span className="text-xs text-gray-500 block">Numérique</span>
-                    <span className="text-lg font-bold text-gray-900">4h 12m <span className="text-xs font-normal text-gray-500">d'écran</span></span>
+                    <span className="text-xs text-gray-500 block">Gaz</span>
+                    <span className="text-lg font-bold text-gray-900">4h 12m <span className="text-xs font-normal text-gray-500">de chauffage</span></span>
                 </div>
             </div>
         </div>

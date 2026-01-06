@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer, AreaChart, Area, CartesianGrid } from 'recharts';
 
-type Tab = 'elec' | 'water' | 'digital';
+type Tab = 'digital';
 
 export const ConsumptionView: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<Tab>('elec');
+  const [activeTab] = useState<Tab>('digital');
 
   const dataElec = [
     { day: 'L', val: 12 },
@@ -27,8 +27,6 @@ export const ConsumptionView: React.FC = () => {
   ];
 
   const tabs = [
-    { id: 'elec', label: 'Électricité' },
-    { id: 'water', label: 'Eau' },
     { id: 'digital', label: 'Gaz' },
   ] as const;
 
@@ -44,7 +42,6 @@ export const ConsumptionView: React.FC = () => {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
             className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all duration-300 ${
               activeTab === tab.id ? 'bg-white shadow-sm text-gray-900' : 'text-gray-400 hover:text-gray-600'
             }`}
@@ -57,10 +54,10 @@ export const ConsumptionView: React.FC = () => {
       {/* Main Chart */}
       <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 h-64">
         <h3 className="text-sm font-semibold text-gray-900 mb-4">
-            {activeTab === 'elec' ? 'Cette semaine (kWh)' : activeTab === 'water' ? 'Cette semaine (L)' : 'Temps de chauffage (h)'}
+            Temps de chauffage (h)
         </h3>
         <ResponsiveContainer width="100%" height="100%">
-            {activeTab === 'elec' ? (
+            {activeTab === null ? (
                  <BarChart data={dataElec} margin={{ top: 10, right: 10, left: 10, bottom: 15 }}>
                     <Bar dataKey="val" fill="#3b82f6" radius={[4, 4, 0, 0]} barSize={20} />
                     <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#9ca3af' }} dy={10} />
@@ -84,17 +81,25 @@ export const ConsumptionView: React.FC = () => {
         </ResponsiveContainer>
       </div>
 
-      {/* History List */}
+      {/* History List - Gaz */}
       <div className="flex flex-col gap-3">
-        <h3 className="text-sm font-semibold text-gray-900">Historique récent</h3>
-        {[1, 2, 3].map((_, i) => (
-            <div key={i} className="bg-white p-4 rounded-2xl flex items-center justify-between border border-gray-50">
-                <div className="flex flex-col">
-                    <span className="text-sm font-medium text-gray-900">Mardi 24 Oct.</span>
-                    <span className="text-xs text-gray-400">Consommation journalière</span>
-                </div>
-                <span className="font-bold text-gray-900">{12 + i}.5 kWh</span>
+        <h3 className="text-sm font-semibold text-gray-900">Historique gaz</h3>
+
+        {[
+          { date: 'Mardi 24 Oct.', value: 18.2 },
+          { date: 'Lundi 23 Oct.', value: 19.6 },
+          { date: 'Dimanche 22 Oct.', value: 17.4 },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="bg-white p-4 rounded-2xl flex items-center justify-between border border-gray-50"
+          >
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-gray-900">{item.date}</span>
+              <span className="text-xs text-gray-400">Consommation de chauffage</span>
             </div>
+            <span className="font-bold text-gray-900">{item.value} m³</span>
+          </div>
         ))}
       </div>
     </div>

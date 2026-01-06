@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Zap, Droplets, Flame  } from 'lucide-react';
+import { Leaf, Flame  } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 export const DashboardView: React.FC = () => {
@@ -57,24 +57,6 @@ export const DashboardView: React.FC = () => {
 
       {/* Quick Stats Grid */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-blue-50 p-4 rounded-2xl flex flex-col gap-2">
-            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                <Zap size={16} />
-            </div>
-            <div>
-                <span className="text-xs text-gray-500 block">Élec.</span>
-                <span className="text-lg font-bold text-gray-900">12.4 <span className="text-xs font-normal text-gray-500">kWh</span></span>
-            </div>
-        </div>
-        <div className="bg-cyan-50 p-4 rounded-2xl flex flex-col gap-2">
-            <div className="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600">
-                <Droplets size={16} />
-            </div>
-             <div>
-                <span className="text-xs text-gray-500 block">Eau</span>
-                <span className="text-lg font-bold text-gray-900">140 <span className="text-xs font-normal text-gray-500">L</span></span>
-            </div>
-        </div>
         <div className="bg-purple-50 p-4 rounded-2xl flex flex-col gap-2 col-span-2">
              <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
